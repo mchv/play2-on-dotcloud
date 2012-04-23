@@ -1,0 +1,19 @@
+#!/bin/bash
+set -e
+BUILDROOT="$(dirname "$0")"
+
+echo 'Checking if Play framework is already installed...'
+if [ -d ~/play-2.0 ]
+then
+    echo 'Play framework found.'
+else
+    echo 'Play framework not found. Installing it...'
+    curl http://download.playframework.org/releases/play-2.0.zip |
+        unzip
+    echo 'Play installed.'
+fi
+
+echo 'Installing run script...'
+cp "$BUILDROOT/run" ~
+
+echo 'Build complete.'
