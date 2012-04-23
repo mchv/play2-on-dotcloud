@@ -29,7 +29,7 @@ If it doesn't work, try ``dotcloud logs`` to see what's happening.
 
 ## Scaling
 
-Horizontal scaling will work as expected. If you apply vertical scaling, you should probably edit ``jetty/run`` to customize the JVM parameters and specify an appropriate heap size.
+Horizontal scaling will work as expected. If you apply vertical scaling, you should probably edit ``playframework/run`` to customize the JVM parameters and specify an appropriate heap size.
 
 ## Warning
 
