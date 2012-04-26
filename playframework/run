@@ -3,6 +3,6 @@ export JAVA_OPTIONS="-Xmx128M -XX:PermSize=64M -XX:MaxPermSize=128M"
 echo "JAVA_OPTIONS=$JAVA_OPTIONS"
 echo '(To change JAVA_OPTIONS, edit the "run" script!)'
 
-cd ./$SERVICE_APPROOT
-../play2-0/play clean compile stage
+cd ~/application
+~/play-2.0/play clean compile stage
 target/start -Dhttp.port=$PORT_WWW
