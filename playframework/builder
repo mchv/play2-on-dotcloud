@@ -23,7 +23,7 @@ else
             echo 'Unzip failed !'
         fi
     else
-        echo 'Donwload failed !'
+        echo 'Download failed !'
     fi
 fi
 
