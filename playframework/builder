@@ -38,4 +38,8 @@ ln -s /var/log/supervisor ~/application/logs
 echo  'Installing run script...'
 cp "$BUILDROOT/run" ~
 
+echo 'Building the Play application'
+cd ~/application
+~/play-2.0/play clean compile stage
+
 echo 'Build complete.'
