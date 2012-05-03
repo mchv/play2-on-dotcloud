@@ -4,5 +4,4 @@ echo "JAVA_OPTIONS=$JAVA_OPTIONS"
 echo '(To change JAVA_OPTIONS, edit the "run" script!)'
 
 cd ~/application
-~/play-2.0/play clean compile stage
 target/start -Dhttp.port=$PORT_WWW
