@@ -1,23 +1,24 @@
 #!/bin/bash
 set -e
 BUILDROOT="$(dirname "$0")"
+VERSION=2.0.1
 
 echo 'Checking if Play framework is already installed...'
-if [ -d ~/play-2.0 ]
+if [ -d ~/play-${VERSION} ]
 then
     echo 'Play framework found.'
 else
     echo 'Play framework not found. Installing it...'
     echo '- Download Play framework'
-    curl -O http://download.playframework.org/releases/play-2.0.zip
-    if [ -e play-2.0.zip ]
+    curl -O http://download.playframework.org/releases/play-${VERSION}.zip
+    if [ -e play-${VERSION}.zip ]
     then
         echo '- Unzip downloaded file'
-        unzip -q play-2.0.zip
-        if [ -d play-2.0 ]
+        unzip -q play-${VERSION}.zip
+        if [ -d play-${VERSION} ]
         then
             echo '- Copy play installation'
-            cp -R ./play-2.0 ~/play-2.0
+            cp -R ./play-${VERSION} ~/play-${VERSION}
             echo 'Play installed.'
         else
             echo 'Unzip failed !'
@@ -40,6 +41,6 @@ cp "$BUILDROOT/run" ~
 
 echo 'Building the Play application'
 cd ~/application
-~/play-2.0/play clean compile stage
+~/play-${VERSION}/play clean compile stage
 
 echo 'Build complete.'
