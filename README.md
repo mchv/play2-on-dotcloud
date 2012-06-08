@@ -1,5 +1,7 @@
 # Customizable Play! 2 service for dotCloud
 
+![logodotcloud](http://www.dotcloud.com/static/img/logo.png)
+
 This is an implementation of the [dotCloud](http://www.dotcloud.com/) [java service](http://docs.dotcloud.com/services/java/), using the new custom build API.
 
 Example running instance: http://play2example-mchv.dotcloud.com/ 
@@ -16,7 +18,6 @@ You want this if:
 To test this, use the good old "git clone / dotcloud push" method:
 
     git clone git://github.com/mchv/play2-on-dotcloud.git
-    dotcloud push plop play2-on-dotcloud
 
 To deploy your own application, put its code source into application folder
 
