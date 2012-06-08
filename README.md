@@ -1,4 +1,4 @@
-# Play! 2 service for dotCloud
+# Play! 2 on dotCloud
 
 <img src="http://www.playframework.org/assets/images/logos/normal.png" height="100 px" />
 
