@@ -1,6 +1,8 @@
-# Customizable Play! 2 service for dotCloud
+# Play! 2 service for dotCloud
 
-![logodotcloud](http://www.dotcloud.com/static/img/logo.png)
+<img src="http://www.playframework.org/assets/images/logos/normal.png" height="100 px" />
+
+![logodotcloud](https://www.dotcloud.com/static/img/logo.png)
 
 This is an implementation of the [dotCloud](http://www.dotcloud.com/) [java service](http://docs.dotcloud.com/services/java/), using the new custom build API.
 
