@@ -42,6 +42,7 @@ cp "$BUILDROOT/run" ~
 echo 'Building the Play application'
 cd ~/application
 
+export _JAVA_OPTIONS="-Xms502m -Xmx502m"
 echo ' -- Cleaning -- '
 ~/play-${VERSION}/play clean
 echo ' -- Compiling -- '
