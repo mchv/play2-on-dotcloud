@@ -41,6 +41,12 @@ cp "$BUILDROOT/run" ~
 
 echo 'Building the Play application'
 cd ~/application
-~/play-${VERSION}/play clean compile stage
+
+echo ' -- Cleaning -- '
+~/play-${VERSION}/play clean
+echo ' -- Compiling -- '
+~/play-${VERSION}/play compile
+echo ' -- Staging -- '
+~/play-${VERSION}/play stage
 
 echo 'Build complete.'
