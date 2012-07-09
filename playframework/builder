@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 BUILDROOT="$(dirname "$0")"
-VERSION=2.0.1
+VERSION=2.0.2
 
 echo 'Checking if Play framework is already installed...'
 if [ -d ~/play-${VERSION} ]
