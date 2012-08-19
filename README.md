@@ -21,8 +21,8 @@ To test this, use the good old "git clone / dotcloud push" method:
 
     git clone git://github.com/mchv/play2-on-dotcloud.git
 
-To deploy your own application, put its code source into application folder
-
+To deploy your own application, put its code source into application folder or,
+Remplace the "application folder" by your "play application folder", and modify the dotcloud.yml (APPLICATION_FOLDER field)
 Don't forget to do one of the following:
 
 - ``dotcloud push`` with the ``--all`` flag (will force the use of rsync over git),

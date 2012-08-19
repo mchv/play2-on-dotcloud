@@ -1,4 +1,6 @@
 play:
+  environment:
+    APPLICATION_FOLDER: application
   type: custom
   buildscript: playframework/builder
   ports:
