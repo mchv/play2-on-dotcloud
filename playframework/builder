@@ -2,7 +2,6 @@
 set -e
 BUILDROOT="$(dirname "$0")"
 VERSION=2.0.3
-
 echo 'Checking if Play framework is already installed...'
 if [ -d ~/play-${VERSION} ]
 then
@@ -29,20 +28,20 @@ else
 fi
 
 echo 'Installing application'
-rm -rf ~/application
-cp -R  ./$SERVICE_APPROOT ~/application
+rm -rf ~/$APPLICATION_FOLDER
+cp -R  ./$SERVICE_APPROOT ~/$APPLICATION_FOLDER
 
 echo 'Symlinking application logs to Supervisor area...'
-rm -rf ~/application/logs
-ln -s /var/log/supervisor ~/application/logs
+rm -rf ~/$APPLICATION_FOLDER/logs
+ln -s /var/log/supervisor ~/$APPLICATION_FOLDER/logs
 
 echo  'Installing run script...'
 cp "$BUILDROOT/run" ~
 
 echo 'Building the Play application'
-cd ~/application
+cd ~/$APPLICATION_FOLDER
 
-export _JAVA_OPTIONS="-Xms502m -Xmx502m"
+export _JAVA_OPTIONS="-Xms256m -Xmx256m"
 echo ' -- Cleaning -- '
 ~/play-${VERSION}/play clean
 echo ' -- Compiling -- '
