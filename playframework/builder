@@ -1,7 +1,20 @@
 #!/bin/bash
+
+###########################
+#       CONFIGURATION     #
+###########################
+
+# version of play to use 
+# modify to 2.1-RC1 for 2.1 first release candidate
+VERSION=2.0.4
+
+# Compile application or not on dotcloud.
+COMPILE=false
+
+###########################
+
 set -e
 BUILDROOT="$(dirname "$0")"
-VERSION=2.0.4
 
 echo 'Checking if Play framework is already installed...'
 if [ -d ~/play-${VERSION} ]
@@ -29,8 +42,12 @@ else
 fi
 
 echo 'Installing application'
-rm -rf ~/application
-cp -R  ./$SERVICE_APPROOT ~/application
+if [ -d ~/application ]
+then
+    rm -rf ~/application
+fi
+    cp -R  ./$SERVICE_APPROOT ~/application
+
 
 echo 'Symlinking application logs to Supervisor area...'
 rm -rf ~/application/logs
@@ -39,15 +56,18 @@ ln -s /var/log/supervisor ~/application/logs
 echo  'Installing run script...'
 cp "$BUILDROOT/run" ~
 
-echo 'Building the Play application'
-cd ~/application
+if $COMPILE
+then
+    echo 'Building the Play application'
+    cd ~/application
+    export _JAVA_OPTIONS="-Xms502m -Xmx502m"
+    echo ' -- Cleaning -- '
+    ~/play-${VERSION}/play clean
+    echo ' -- Compiling -- '
+    ~/play-${VERSION}/play compile
+    echo ' -- Staging -- '
+    ~/play-${VERSION}/play stage
+    echo 'Build complete.'
+fi
 
-export _JAVA_OPTIONS="-Xms502m -Xmx502m"
-echo ' -- Cleaning -- '
-~/play-${VERSION}/play clean
-echo ' -- Compiling -- '
-~/play-${VERSION}/play compile
-echo ' -- Staging -- '
-~/play-${VERSION}/play stage
-
-echo 'Build complete.'
+echo 'Done !'

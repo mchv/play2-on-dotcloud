@@ -1,5 +1,18 @@
 #!/bin/sh
-export JAVA_OPTIONS="-Xmx128M -XX:PermSize=64M -XX:MaxPermSize=128M"
+
+###########################
+#       CONFIGURATION     #
+###########################
+
+# Compile application or not on dotcloud.
+MAX_HEAP_SIZE=128M
+PERM_SIZE=64M
+MAX_PERM_SIZE=128M
+
+###########################
+
+
+export JAVA_OPTIONS="-Xmx${MAX_HEAP_SIZE} -XX:PermSize=${PERM_SIZE} -XX:MaxPermSize=${MAX_PERM_SIZE}"
 echo "JAVA_OPTIONS=$JAVA_OPTIONS"
 echo '(To change JAVA_OPTIONS, edit the "run" script!)'
 
