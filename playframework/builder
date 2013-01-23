@@ -5,7 +5,7 @@
 ###########################
 
 # version of play to use 
-# modify to 2.1-RC1 for 2.1 first release candidate
+# modify to 2.1-RC2 for 2.1 second release candidate
 VERSION=2.0.4
 
 # Compile application or not on dotcloud.
